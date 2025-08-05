@@ -5,11 +5,11 @@ const categoryCtrl = require('../controllers/categoryControllers');
 const categoryValidators=require('../validators/categoryValidators')
 const validator=require('../validators/validator');
 
-router.post('/categories',categoryValidators,validator, categoryCtrl.addCategory);
-router.get('/categories',categoryCtrl.getAllCategories);
-router.get('/categories/:id',categoryCtrl.getCategoryById);
-router.put('/categories/:id',categoryValidators,validator,categoryCtrl.updateCategory);
-router.delete('/categories/:id',categoryCtrl.deleteCategory);
-router.get('/categories/:categoryId/comments',categoryCtrl.getCommentsByCategory);
+router.post('/',categoryValidators,validator, categoryCtrl.addCategory);
+router.get('/',categoryCtrl.getAllCategories);
+router.get('/:id',categoryCtrl.getCategoryById);
+router.put('/:id',categoryValidators,validator,categoryCtrl.updateCategory);
+router.delete('/:id',categoryCtrl.deleteCategory);
+router.get('/:categoryId/comments',categoryCtrl.getCommentsByCategory);
 
 module.exports = router;

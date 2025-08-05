@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-app.use('/api/categories', require('./routes/categoryRoutes'));
+app.use('/api/category', require('./routes/categoryRoutes'));
 app.use('/api/comments', require('./routes/commentRoutes'));
 
 app.get('/', (req, res) => {

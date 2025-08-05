@@ -6,10 +6,10 @@ const commentValidators = require('../validators/commentValidators');
 const validator = require('../validators/validator');
 
 
-router.post('/comments', commentValidators, validator, commentCtrl.addComment);
-router.get('/comments', commentCtrl.getAllComments);
-router.get('/comments/:id', commentCtrl.getCommentById);
-router.put('/comments/:id', commentValidators, validator, commentCtrl.updateComment);
-router.delete('/comments/:id', commentCtrl.deleteComment);
+router.post('/', commentValidators, validator, commentCtrl.addComment);
+router.get('/', commentCtrl.getAllComments);
+router.get('/:id', commentCtrl.getCommentById);
+router.put('/:id', commentValidators, validator, commentCtrl.updateComment);
+router.delete('/:id', commentCtrl.deleteComment);
 
 module.exports = router;
